@@ -1,5 +1,5 @@
-const getStudentIdsSum = (Students) => {
-  const id = Students.reduce(
+const getStudentIdsSum = (students) => {
+  const id = students.reduce(
     (acc, value) => acc + value.id, 0,
   );
   return id;
