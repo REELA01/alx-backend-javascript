@@ -1,11 +1,9 @@
-const cleanSet = (xset, xstartString) => {
-  if (xstartString === undefined || xstartString.length === 0) {
+export default function cleanSet(xSet, xStartString) {
+  if (!xSet || !xStartString || !(xSet instanceof Set) || typeof xStartString !== 'string') {
     return '';
   }
-  return [...xset]
-    .filter((parametro) => (parametro !== undefined ? parametro.startsWith(xstartString) : ''))
-    .map((parametro) => (parametro !== undefined ? parametro.slice(xstartString.length) : ''))
+  return Array.from(xSet)
+    .filter((ele) => ele && ele.startsWith(xStartString))
+    .map((ele) => ele.replace(xStartString, ''))
     .join('-');
-};
-
-export default cleanSet;
+}

@@ -1,5 +1,5 @@
-const setFromArray = (aarray) => (
-  new Set(aarray)
+const setFromArray = (array) => (
+  new Set(array)
 );
 
 export default setFromArray;
